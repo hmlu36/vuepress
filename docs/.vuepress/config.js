@@ -16,7 +16,7 @@ function getChildren(path) {
 module.exports = {
   title: 'Note筆記',
   description: '各式各樣的筆記',
-  base: '/note/',
+  base: '/',
   repo: 'https://github.com/hmlu36/note',
   extend: '@vuepress/theme-default',
   themeConfig: {

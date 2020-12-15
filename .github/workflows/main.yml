@@ -31,7 +31,7 @@ jobs:
           npm install
       - name: npm run docs:build
         run: |
-          npm run docs:build
+          npm run vuepress build docs
       - name: Commit files
         run: |
           cd $PUBLISH_DIR
