@@ -10,7 +10,7 @@ jobs:
       MY_SECRET: ${{secrets.commit_secret}}
       USER_NAME: joshua.lu
       USER_EMAIL: hmlu36@gmail.com
-      PUBLISH_DIR: ./deploy
+      PUBLISH_DIR: docs/.vuepress/dist
       VUE_APP_APIKEY: ${{secrets.APIKEY}}
       VUE_APP_APPID: ${{secrets.APPID}}
       VUE_APP_DOMAIN: ${{secrets.DOMAIN}}
