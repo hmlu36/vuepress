@@ -29,9 +29,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: npm run docs:build
+      - name: npm run build
         run: |
-          npm run docs:build
+          npm run build
       - name: Commit files
         run: |
           cd $PUBLISH_DIR

@@ -51,6 +51,12 @@ module.exports = {
           children: getChildren('docs/House/'),
         },
       ],
+      '/Wedding/': [
+        {
+          title: '婚禮相關',
+          children: getChildren('docs/Wedding/'),
+        },
+      ],
     },
     nav: [{ text: '首頁', link: '/' }],
     lastUpdated: '最後更新時間', // string | boolean
