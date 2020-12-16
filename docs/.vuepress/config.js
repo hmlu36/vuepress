@@ -14,6 +14,9 @@ function getChildren(path) {
 }
 
 module.exports = {
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosanstc.css?display=swap' }],
+  ],
   title: 'Note筆記',
   description: '各式各樣的筆記',
   base: '/vuepress',
