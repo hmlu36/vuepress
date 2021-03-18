@@ -9,7 +9,7 @@ function getChildren(path) {
       list.push(filename);
     }
   }
-  //console.log(`${path}: `, list);
+  console.log(`${path}: `, list);
   return list;
 }
 
@@ -62,7 +62,7 @@ module.exports = {
       ],
     },
     nav: [{ text: '首頁', link: '/' }],
-    lastUpdated: '最後更新時間', // string | boolean
+    lastUpdated: false, // string | boolean
     // default value is true. Set it to false to hide next page links on all pages
     nextLinks: false,
     // default value is true. Set it to false to hide prev page links on all pages
@@ -75,9 +75,16 @@ module.exports = {
   sidebar: 'auto', // 側邊攔配置
   sidebarDepth: 2,
   plugins: [
-    ['@vuepress/blog'],
+    [
+      '@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: true
+      }
+    ],
+    '@vuepress/blog',
     '@vuepress/back-to-top',
-    '@vuepress/last-updated',
+    //'@vuepress/last-updated',
     [
       '@vuepress/search',
       {

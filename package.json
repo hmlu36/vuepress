@@ -1,13 +1,18 @@
 {
   "scripts": {
-    "serve": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "debug": "vuepress dev docs --debug"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "materialize-css": "^1.0.0",
+    "vee-validate": "^3.4.5",
+    "vue-sweetalert2": "^4.2.0",
     "vuepress-bar": "^0.3.0"
   },
   "devDependencies": {
+    "@vuepress/plugin-pwa": "^1.8.2",
+    "@vuepress/plugin-search": "^1.8.2",
     "@vuepress/theme-blog": "^2.3.3",
     "vuepress": "^1.7.1"
   }
