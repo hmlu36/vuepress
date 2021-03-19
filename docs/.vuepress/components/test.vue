@@ -1,5 +1,5 @@
 <template>
-  <div class="audio">
+  <div>
     <audio-player>
       <source src="../public/sample.mp3" />
     </audio-player>
@@ -19,5 +19,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

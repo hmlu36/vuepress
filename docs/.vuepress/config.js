@@ -23,50 +23,50 @@ module.exports = {
   repo: 'https://github.com/hmlu36/note',
   extend: '@vuepress/theme-default',
   themeConfig: {
+    sidebar: require('./sidebar'),
+    /*
     sidebar: {
-      '/BikeTravel/': [
+      '/Bike/': [
         {
-          title: '假日騎士日誌',
-          children: getChildren('docs/BikeTravel/'),
-        },
-      ],
-      '/BikeInfo/': [
-        {
-          title: '自行車know-how',
-          children: getChildren('docs/BikeInfo/'),
+          title: '🚴假日騎士日誌',
+          children: getChildren('/Bike/BikeTravel/'),
+        }, {
+          title: '🚲自行車know-how',
+          children: getChildren('/Bike/BikeInfo/'),
         },
       ],
       '/Geosat/': [
         {
           title: '經緯航太',
-          children: getChildren('docs/Geosat/'),
+          children: getChildren('/Geosat/'),
         },
       ],
       '/WorkSkill/': [
         {
-          title: '工作技巧',
-          children: getChildren('docs/WorkSkill/'),
+          title: '💼工作技巧',
+          children: getChildren('/WorkSkill/'),
         },
       ],
       '/House/': [
         {
           title: '房地產相關',
-          children: getChildren('docs/House/'),
+          children: getChildren('/House/'),
         },
       ],
       '/Wedding/': [
         {
-          title: '婚禮相關',
-          children: getChildren('docs/Wedding/'),
+          title: '💏婚禮相關',
+          children: getChildren('/Wedding/'),
         },
       ],
     },
+      */
     nav: [{ text: '首頁', link: '/' }],
     lastUpdated: false, // string | boolean
     // default value is true. Set it to false to hide next page links on all pages
-    nextLinks: false,
+    //nextLinks: false,
     // default value is true. Set it to false to hide prev page links on all pages
-    prevLinks: false,
+    //prevLinks: false,
     smoothScroll: true,
   },
   markdown: {
@@ -84,7 +84,6 @@ module.exports = {
     ],
     '@vuepress/blog',
     '@vuepress/back-to-top',
-    //'@vuepress/last-updated',
     [
       '@vuepress/search',
       {
