@@ -41,7 +41,6 @@ jobs:
           git status
           git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
           git checkout -b gh-pages
-          git rm -rf
           git add --all
           git commit -m "deploy to Github pages"
           git push origin gh-pages -f
