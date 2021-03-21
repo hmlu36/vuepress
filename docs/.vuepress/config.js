@@ -90,5 +90,15 @@ module.exports = {
         searchMaxSuggestions: 10,
       },
     ],
+    [
+      "named-chunks",
+      {
+        pageChunkName: function (page) {
+          let chunkPath = page.path.substring(1) + page.key;
+          // console.log(chunkPath);
+          return chunkPath;
+        }
+      }
+    ]
   ],
 };
