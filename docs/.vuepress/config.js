@@ -19,7 +19,7 @@ module.exports = {
   ],
   title: 'Note筆記',
   description: '各式各樣的筆記',
-  base: '/vuepress',
+  base: '/vuepress/',
   repo: 'https://github.com/hmlu36/note',
   extend: '@vuepress/theme-default',
   themeConfig: {
@@ -89,13 +89,6 @@ module.exports = {
       {
         searchMaxSuggestions: 10,
       },
-    ],
-    [
-      "named-chunks",
-      {
-        pageChunkName: page => 'page' + page.key.slice(1),
-        layoutChunkName: layout => 'layout-' + layout.componentName,
-      }
     ]
   ],
 };
