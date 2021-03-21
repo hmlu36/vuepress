@@ -93,11 +93,8 @@ module.exports = {
     [
       "named-chunks",
       {
-        pageChunkName: function (page) {
-          let chunkPath = page.path.substring(1) + page.key;
-          // console.log(chunkPath);
-          return chunkPath;
-        }
+        pageChunkName: page => 'page' + page.key.slice(1),
+        layoutChunkName: layout => 'layout-' + layout.componentName,
       }
     ]
   ],
