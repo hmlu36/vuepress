@@ -77,6 +77,12 @@ module.exports = {
             children: getSidebars('WorkSkill')
         },
     ],
+    '/Stock/': [
+        {
+            title: '📈 股市',
+            children: getSidebars('Stock')
+        },
+    ],
     '/Wedding/': [
         {
             title: '💏婚禮相關',
