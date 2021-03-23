@@ -24,43 +24,6 @@ module.exports = {
   extend: '@vuepress/theme-default',
   themeConfig: {
     sidebar: require('./sidebar'),
-    /*
-    sidebar: {
-      '/Bike/': [
-        {
-          title: '🚴假日騎士日誌',
-          children: getChildren('/Bike/BikeTravel/'),
-        }, {
-          title: '🚲自行車know-how',
-          children: getChildren('/Bike/BikeInfo/'),
-        },
-      ],
-      '/Geosat/': [
-        {
-          title: '經緯航太',
-          children: getChildren('/Geosat/'),
-        },
-      ],
-      '/WorkSkill/': [
-        {
-          title: '💼工作技巧',
-          children: getChildren('/WorkSkill/'),
-        },
-      ],
-      '/House/': [
-        {
-          title: '房地產相關',
-          children: getChildren('/House/'),
-        },
-      ],
-      '/Wedding/': [
-        {
-          title: '💏婚禮相關',
-          children: getChildren('/Wedding/'),
-        },
-      ],
-    },
-      */
     nav: [{ text: '首頁', link: '/' }],
     lastUpdated: false, // string | boolean
     // default value is true. Set it to false to hide next page links on all pages

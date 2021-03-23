@@ -71,10 +71,16 @@ module.exports = {
             children: getSidebars('Bike/BikeInfo')
         },
     ],
-    '/WorkSkill/': [
-        {
-            title: '💼工作技巧',
-            children: getSidebars('WorkSkill')
+    '/CodingSkill/': [
+		{
+            title: 'Python',
+            path: '/CodingSkill/Python/',
+            children: getSidebars('CodingSkill/Python')
+        }, 
+		{
+            title: '其他',
+            path: '/CodingSkill/Other',
+            children: getSidebars('CodingSkill/Other')
         },
     ],
     '/Stock/': [

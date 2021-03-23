@@ -9,7 +9,7 @@ search: false
 - [經緯航太](../Geosat/README.md)  
 -->
 
-- [工作技巧](../WorkSkill/README.md)  
+- [工作技巧](../CodingSkill/README.md)  
 
 <!--
 - [房地產相關](../House/README.md)  
