@@ -78,6 +78,11 @@ module.exports = {
             children: getSidebars('CodingSkill/Python')
         }, 
 		{
+            title: 'Vite',
+            path: '/CodingSkill/Vite/',
+            children: getSidebars('CodingSkill/Vite')
+        }, 
+		{
             title: '其他',
             path: '/CodingSkill/Other',
             children: getSidebars('CodingSkill/Other')
