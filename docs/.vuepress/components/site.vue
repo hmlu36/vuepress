@@ -1,15 +1,13 @@
 <template>
-  <div style="background-color:#ecd7d0">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-4 text-center" v-for="key in Object.keys(seat)" :key="key">
-          <div class="row col-12 text-center">
-            <div class="col-12 border border-white pickedTableHead">
-              <span v-html="key" />
-            </div>
-            <div class="col-6 border border-white" v-for="(person, index) in seat[key]" :key="index">
-              {{ person }}
-            </div>
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-4 text-center" v-for="key in Object.keys(seat)" :key="key">
+        <div class="row col-12 text-center">
+          <div class="col-12 border border-secondary pickedTableHead">
+            <span v-html="key" :style="{ 'font-family': 'Noto Sans TC', 'font-weight': '400' }" />
+          </div>
+          <div class="col-6 border border-secondary" v-for="(person, index) in seat[key]" :key="index" :style="{ color: '#D0665A' }">
+            {{ person }}
           </div>
         </div>
       </div>
