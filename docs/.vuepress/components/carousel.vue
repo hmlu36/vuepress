@@ -1,7 +1,10 @@
 <template>
   <div>
     <swiper class="swiper" :options="swiperOption">
-      <swiper-slide v-for="(slide, i) in images" :key="i" :style="{ 'background-image': 'url(' + slide.path + ')' }">{{ slide.content }}</swiper-slide>
+      <swiper-slide v-for="(slide, i) in images" :key="i">
+        {{ slide.content }}
+        <img :src="slide.path" class="swiper-lazy" />
+      </swiper-slide>
       <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
       <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
       <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
