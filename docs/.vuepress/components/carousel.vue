@@ -1,17 +1,24 @@
 <template>
-  <div class="container">
-    <vueper-slides :fixed-height="true">
-      <vueper-slide v-for="(slide, i) in images" :key="i" :image="slide.title" :content="slide.content" />
-    </vueper-slides>
+  <div>
+    <swiper class="swiper" :options="swiperOption">
+      <swiper-slide v-for="(slide, i) in images" :key="i" :style="{ 'background-image': 'url(' + slide.path + ')' }">{{ slide.content }}</swiper-slide>
+      <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
+      <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+      <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+    </swiper>
   </div>
 </template>
 
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides';
-import 'vueperslides/dist/vueperslides.css';
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css';
 
 export default {
-  components: { VueperSlides, VueperSlide },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data: () => ({
     slides: [
       {
@@ -20,6 +27,19 @@ export default {
       },
     ],
     images: [],
+    swiperOption: {
+      spaceBetween: 30,
+      autoHeight: true, //enable auto height
+      effect: 'fade',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    },
   }),
   mounted() {
     const result = require.context('../public/photo/', true, /\.jpg$/);
@@ -27,10 +47,16 @@ export default {
     //console.log(JSON.stringify(result.keys()));
 
     result.keys().forEach((key) => {
-      this.images.push({ title: result(key), content: key });
+      this.images.push({ path: result(key), content: key.replace('.jpg', '').replace('.\/', '') });
       // console.log(key);
     });
     //console.log(JSON.stringify(this.images));
   },
 };
 </script>
+
+<style scoped>
+.swiper {
+  height: auto;
+}
+</style>
