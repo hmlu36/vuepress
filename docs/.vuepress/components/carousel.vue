@@ -27,14 +27,6 @@ export default {
     sliding: null,
     images: [],
   }),
-  updated() {
-    if (this.carousel) {
-      this.$nextTick(() => {
-        this.carousel.loopDestroy();
-        this.carousel.loopCreate();
-      });
-    }
-  },
   methods: {
     onSlideStart(slide) {
       this.sliding = true;
