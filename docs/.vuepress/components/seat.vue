@@ -1,16 +1,26 @@
 <template>
   <b-container class="container-fluid">
+    <b-row>
+      <b-col cols="6">
+        <b-form-input v-model="searchName" @keyup.enter="search" placeholder="搜尋桌位" />
+        <!--<b-button pill @click="search">搜尋</b-button>-->
+      </b-col>
+      <b-col cols="6" class="content">
+        <span v-html="searchResult" />
+      </b-col>
+    </b-row>
+
     <b-row class="align-items-center">
-      <b-col cols="4" class="text-center" v-for="key in Object.keys(seat)" :key="key">
+      <b-col cols="4" class="text-center" v-for="key in Object.keys(seats)" :key="key">
         <b-row class="text-center">
           <b-col cols="12" class="border border-secondary pickedTableHead">
-            <span v-html="key" :style="{ 'font-family': 'Noto Sans TC', 'font-weight': '400' }" />
+            <span v-html="key" />
           </b-col>
-          <b-col cols="6" class="border border-secondary content" v-for="(person, index) in seat[key]" :key="index" >
+          <b-col cols="6" class="border border-secondary content" v-for="(person, index) in seats[key]" :key="index">
             {{ person }}
           </b-col>
         </b-row>
-        </b-col>
+      </b-col>
     </b-row>
   </b-container>
 </template>
@@ -19,7 +29,9 @@
 export default {
   data() {
     return {
-      seat: {
+      searchName: '',
+      searchResult: '',
+      seats: {
         '1.主桌<br/>&nbsp;': ['盧泓民', '鄭佳恩', '盧新發', '鄭信一', '盧麗女', '蕭淑珠', 'A7', 'A8', 'A9', 'A10'],
         '2.男方親戚<br/>&nbsp;': ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10'],
         '3.男方朋友<br/>淡水教會': ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10'],
@@ -39,6 +51,19 @@ export default {
       },
     };
   },
+  methods: {
+    search() {
+      console.log(this.searchName);
+      Object.keys(this.seats).forEach((key) => {
+        let isExist = this.seats[key].some((entry) => {
+          return entry == this.searchName;
+        });
+        if (isExist) {
+          this.searchResult = key;
+        }
+      });
+    },
+  },
 };
 </script>
 
@@ -46,13 +71,14 @@ export default {
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css';
 
 .pickedTableHead {
+  font-family: 'Noto Sans TC';
+  font-weight: '400';
   color: #ecd7d0;
   background-color: #890025;
 }
 
 .content {
   font-family: 'Noto Sans TC';
-  font-weight: '400';
-  color: 'black'
+  color: 'black';
 }
 </style>
