@@ -21,15 +21,7 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
-// import style (<= Swiper 5.x)
-import 'swiper/css/swiper.css';
-
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
   data: () => ({
     slide: 0,
     sliding: null,
