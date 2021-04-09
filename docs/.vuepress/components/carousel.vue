@@ -1,13 +1,22 @@
 <template>
   <div>
-    <swiper class="swiper" :options="swiperOption" ref="carousel">
-      <swiper-slide v-for="(slide, i) in images" :key="i">
-        <div class="swiper-lazy">{{ slide.content }}</div>
-        <img :src="slide.path" />
-      </swiper-slide>
-      <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-      <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-    </swiper>
+    <b-carousel
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="480"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+      <!-- Slides with custom text -->
+      <b-carousel-slide v-for="(image, index) in images" :key="index" :img-src="image.path">
+        <h1>{{ image.content }}</h1>
+      </b-carousel-slide>
+    </b-carousel>
   </div>
 </template>
 
@@ -22,27 +31,9 @@ export default {
     SwiperSlide,
   },
   data: () => ({
-    slides: [
-      {
-        title: 'Slide #1',
-        content: 'Slide content.',
-      },
-    ],
+    slide: 0,
+    sliding: null,
     images: [],
-    swiperOption: {
-      autoHeight: true, //enable auto height
-      loop: true,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      effect: 'fade',
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    },
   }),
   updated() {
     if (this.carousel) {
@@ -51,6 +42,14 @@ export default {
         this.carousel.loopCreate();
       });
     }
+  },
+  methods: {
+    onSlideStart(slide) {
+      this.sliding = true;
+    },
+    onSlideEnd(slide) {
+      this.sliding = false;
+    },
   },
   mounted() {
     const result = require.context('../public/photo/', true, /\.jpg$/);
@@ -66,9 +65,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.text {
-  max-width: 430px;
-  line-height: 1.32;
-}
-</style>
+<style scoped></style>
