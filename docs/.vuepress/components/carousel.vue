@@ -1,11 +1,10 @@
 <template>
   <div>
-    <swiper class="swiper" :options="swiperOption">
+    <swiper class="swiper" :options="swiperOption" ref="carousel">
       <swiper-slide v-for="(slide, i) in images" :key="i">
-        {{ slide.content }}
-        <img :src="slide.path" class="swiper-lazy" />
+        <div class="swiper-lazy">{{ slide.content }}</div>
+        <img :src="slide.path" />
       </swiper-slide>
-      <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
       <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
       <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
     </swiper>
@@ -31,19 +30,28 @@ export default {
     ],
     images: [],
     swiperOption: {
-      spaceBetween: 30,
       autoHeight: true, //enable auto height
-      effect: 'fade',
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
       },
+      effect: 'fade',
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
     },
   }),
+  updated() {
+    if (this.carousel) {
+      this.$nextTick(() => {
+        this.carousel.loopDestroy();
+        this.carousel.loopCreate();
+      });
+    }
+  },
   mounted() {
     const result = require.context('../public/photo/', true, /\.jpg$/);
 
@@ -59,7 +67,8 @@ export default {
 </script>
 
 <style scoped>
-.swiper {
-  height: auto;
+.text {
+  max-width: 430px;
+  line-height: 1.32;
 }
 </style>
