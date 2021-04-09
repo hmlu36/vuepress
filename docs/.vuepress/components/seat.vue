@@ -6,7 +6,7 @@
           <b-col cols="12" class="border border-secondary pickedTableHead">
             <span v-html="key" :style="{ 'font-family': 'Noto Sans TC', 'font-weight': '400' }" />
           </b-col>
-          <b-col cols="6" class="border border-secondary" v-for="(person, index) in seat[key]" :key="index" :style="{ color: 'black' }">
+          <b-col cols="6" class="border border-secondary content" v-for="(person, index) in seat[key]" :key="index" >
             {{ person }}
           </b-col>
         </b-row>
@@ -48,5 +48,11 @@ export default {
 .pickedTableHead {
   color: #ecd7d0;
   background-color: #890025;
+}
+
+.content {
+  font-family: 'Noto Sans TC';
+  font-weight: '400';
+  color: 'black'
 }
 </style>
