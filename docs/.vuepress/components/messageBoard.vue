@@ -17,15 +17,15 @@
         </b-carousel-slide>
       </template>
     </b-carousel>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
           this.records = data
             .map((record) => record.fields)
             .filter((record) => !!record.想對我們說的話);
-          console.log(JSON.stringify(this.records));
+          //console.log(JSON.stringify(this.records));
         })
         .catch((error) => {
           console.log(error);
