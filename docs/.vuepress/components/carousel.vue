@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-center content">
-      {{ images[slide].content }}
+      {{ !!images[slide] ? images[slide].content : "" }}
     </p>
     <b-carousel
       v-model="slide"
@@ -46,7 +46,6 @@ export default {
 </script>
 
 <style scoped>
-
 .content {
   font-size: 24px;
 }
