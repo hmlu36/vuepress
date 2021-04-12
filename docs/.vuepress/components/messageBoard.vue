@@ -17,6 +17,15 @@
         </b-carousel-slide>
       </template>
     </b-carousel>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
   </div>
 </template>
 
