@@ -12,10 +12,8 @@ jobs:
       USER_EMAIL: hmlu36@gmail.com
       PUBLISH_DIR: docs/.vuepress/dist
       VUE_APP_APIKEY: ${{secrets.APIKEY}}
-      VUE_APP_APPID: ${{secrets.APPID}}
-      VUE_APP_DOMAIN: ${{secrets.DOMAIN}}
-      VUE_APP_MEASUREMENTID: ${{secrets.MEASUREMENTID}}
-      VUE_APP_MESSAGINGSENDERID: ${{secrets.MESSAGINGSENDERID}}
+      VUE_APP_APPID: ${{secrets.VUE_APP_ID}}
+      VUE_APP_VUE_APP_KEY: ${{secrets.VUEE_APP_KEY}}
     runs-on: ubuntu-latest
     strategy:
       matrix:

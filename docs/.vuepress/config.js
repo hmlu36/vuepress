@@ -1,4 +1,6 @@
 const fs = require('fs');
+require('dotenv').config()
+const webpack = require('webpack')
 
 function getChildren(path) {
   let files = fs.readdirSync(path);
@@ -54,4 +56,11 @@ module.exports = {
       },
     ]
   ],
+  configureWebpack: (config) => {
+    return {
+      plugins: [
+        new webpack.EnvironmentPlugin({ ...process.env })
+      ]
+    }
+  }
 };
