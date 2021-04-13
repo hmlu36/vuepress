@@ -2,30 +2,22 @@
   <div>
     <b-carousel
       :interval="4000"
-      img-width="1024"
-      img-height="480"
-      style="text-shadow: 0.1px 0.1px 0.1px #333" 
+      fade
+      img-width="88%"
+      img-height="68%"
+      style="text-shadow: 0.1px 0.1px 0.1px #333"
       background="rgba(255,255,255, 0.2)"
     >
       <template v-for="record in records">
         <!-- Slide with blank fluid image to maintain slide aspect ratio -->
         <b-carousel-slide img-blank>
           <div class="content">
-            <h2 style="text-align: left">{{ record.想對我們說的話 }}</h2>
-            <h3 style="text-align: right">{{ record.姓名 }}({{ record.與新人關係 }})</h3>
+            <div class="message">{{ record.想對我們說的話 }}</div>
+            <div class="signature">{{ record.姓名 }}({{ record.與新人關係 }})</div>
           </div>
         </b-carousel-slide>
       </template>
     </b-carousel>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </div>
 </template>
 
@@ -64,11 +56,55 @@ export default {
 </script>
 
 <style scoped>
-.carousel {
-  padding-top: 20%;
-}
-
 .content {
   color: #c69c56;
+}
+
+.message {
+  text-align: left;
+}
+
+.signature {
+  text-align: right;
+}
+
+@media (min-width: 320px) {
+  .message {
+    font-size: 20px;
+  }
+
+  .signature {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 640px) {
+  .message {
+    font-size: 22px;
+  }
+
+  .signature {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .message {
+    font-size: 24px;
+  }
+
+  .signature {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .message {
+    font-size: 26px;
+  }
+
+  .signature {
+    font-size: 24px;
+  }
 }
 </style>
