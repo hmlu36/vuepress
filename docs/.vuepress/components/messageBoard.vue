@@ -1,8 +1,7 @@
 <template>
   <div>
     <b-carousel
-      :interval="4240"
-      fade
+      :interval="6800"
       img-width="88%"
       img-height="68%"
       style="text-shadow: 0.1px 0.1px 0.1px #333"
