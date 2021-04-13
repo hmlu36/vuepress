@@ -4,8 +4,8 @@
       :interval="4000"
       img-width="1024"
       img-height="480"
-      style="text-shadow: 0.1px 0.1px 0.1px #333"
-      background="rgba(255,255,255, 0.3)"
+      style="text-shadow: 0.1px 0.1px 0.1px #333" 
+      background="rgba(255,255,255, 0.2)"
     >
       <template v-for="record in records">
         <!-- Slide with blank fluid image to maintain slide aspect ratio -->
