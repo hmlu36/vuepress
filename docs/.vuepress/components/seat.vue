@@ -37,7 +37,7 @@ export default {
       searchName: "",
       searchResult: "",
       seats: {
-        "主桌<br/>&nbsp;": [
+        "主桌<br/>12人": [
           "盧泓民",
           "鄭佳恩",
           "盧新發",
@@ -192,7 +192,6 @@ export default {
           "信溢2",
           "信溢3",
           "信溢4",
-          "信溢5",
           "信偉",
           "娜莉",
           "淑貞1",
