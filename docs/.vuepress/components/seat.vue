@@ -1,6 +1,7 @@
 <template>
   <b-container class="container-fluid">
     <b-img src="https://raw.githubusercontent.com/hmlu36/vuepress/gh-pages/4.24%E7%9B%A7%E9%84%AD%E5%BA%9C%E5%96%9C%E5%AE%B4.jpg" />
+    <br />
     <b-row>
       <b-col cols="6">
         <b-form-input v-model="searchName" @keyup.enter="search" placeholder="搜尋桌位" />
