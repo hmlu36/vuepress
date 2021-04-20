@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <p class="text-center content">
       {{ !!images[slide] ? images[slide].content : "" }}
     </p>
@@ -35,7 +35,8 @@ export default {
       let tempContent = key.replace(".jpg", "").replace(".\/", "");
       this.images.push({
         path: photos(key),
-        content: tempContent.substr(tempContent.indexOf(".") + 1),
+        content: tempContent,
+        //content: tempContent.substr(tempContent.indexOf(".") + 1),
       });
       console.log(key);
     });
