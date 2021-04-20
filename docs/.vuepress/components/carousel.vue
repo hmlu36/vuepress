@@ -34,9 +34,10 @@ export default {
     //console.log(JSON.stringify(result.keys()));
 
     result.keys().forEach((key) => {
+      let tempContent = key.replace(".jpg", "").replace(".\/", "");
       this.images.push({
         path: result(key),
-        content: key.replace(".jpg", "").replace(".\/", ""),
+        content: tempContent.substr(tempContent.indexOf(".") + 1),
       });
       // console.log(key);
     });
