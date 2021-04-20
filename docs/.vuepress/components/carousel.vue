@@ -32,14 +32,13 @@ export default {
     const result = require.context("../public/photo/", true, /\.jpg$/);
 
     //console.log(JSON.stringify(result.keys()));
-
     result.keys().forEach((key) => {
       let tempContent = key.replace(".jpg", "").replace(".\/", "");
       this.images.push({
         path: result(key),
         content: tempContent.substr(tempContent.indexOf(".") + 1),
       });
-      // console.log(key);
+      console.log(key);
     });
     //console.log(JSON.stringify(this.images));
   },
