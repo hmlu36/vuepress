@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <p class="text-center content">
       {{ !!images[slide] ? images[slide].content : "" }}
     </p>
