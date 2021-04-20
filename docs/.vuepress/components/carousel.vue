@@ -6,7 +6,7 @@
     <b-carousel
       v-model="slide"
       fade
-      :interval="4000"
+      :interval="1000"
       controls
       background="#ababab"
       img-width="1024"
@@ -29,13 +29,12 @@ export default {
     images: [],
   }),
   mounted() {
-    const result = require.context("../public/photo/", true, /\.jpg$/);
+    const photos = require.context("../public/photo/", true, /\.jpg$/);
 
-    //console.log(JSON.stringify(result.keys()));
-    result.keys().forEach((key) => {
+    photos.keys().forEach((key) => {
       let tempContent = key.replace(".jpg", "").replace(".\/", "");
       this.images.push({
-        path: result(key),
+        path: photos(key),
         content: tempContent.substr(tempContent.indexOf(".") + 1),
       });
       console.log(key);
