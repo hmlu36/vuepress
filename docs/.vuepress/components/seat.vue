@@ -1,6 +1,12 @@
 <template>
   <b-container class="container-fluid">
-    <b-img src="https://raw.githubusercontent.com/hmlu36/vuepress/gh-pages/4.24%E7%9B%A7%E9%84%AD%E5%BA%9C%E5%96%9C%E5%AE%B4.jpg" />
+    <b-row>
+      <b-col cols="12">
+        <b-img
+          src="https://raw.githubusercontent.com/hmlu36/vuepress/gh-pages/4.24%E7%9B%A7%E9%84%AD%E5%BA%9C%E5%96%9C%E5%AE%B4.jpg"
+        />
+      </b-col>
+    </b-row>
     <br />
     <b-row>
       <b-col cols="6">
@@ -99,7 +105,7 @@ export default {
           "林俐妡",
           "林佳誼(素)",
           "林清安",
-          "魏淑玲"
+          "魏淑玲",
         ],
         "6.男方朋友<br/>男方教會&nbsp;11人": [
           "謝俊彥",
@@ -243,13 +249,12 @@ export default {
   },
   methods: {
     search() {
-      console.log(this.searchName);
       Object.keys(this.seats).forEach((key) => {
         let isExist = this.seats[key].some((entry) => {
           return entry.includes(this.searchName);
         });
         if (isExist) {
-          this.searchResult = key;
+          this.searchResult = key.substring(0, key.indexOf("&nbsp;")).replace("<br/>", "");
         }
       });
     },
