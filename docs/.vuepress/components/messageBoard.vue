@@ -50,6 +50,9 @@ export default {
   },
   mounted() {
     this.loadData();
+    
+    let defaultContent = document.getElementsByClassName("theme-default-content")[0];
+    defaultContent.className="";
   },
 };
 </script>
@@ -69,41 +72,41 @@ export default {
 
 @media (min-width: 320px) {
   .message {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .signature {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 640px) {
   .message {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .signature {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
 @media (min-width: 1280px) {
   .message {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .signature {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
 @media (min-width: 2560px) {
   .message {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   .signature {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 </style>
