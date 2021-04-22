@@ -50,7 +50,8 @@ export default {
   },
   mounted() {
     this.loadData();
-    
+
+    // 移除theme-default-content, 畫面寬的限制
     let defaultContent = document.getElementsByClassName("theme-default-content")[0];
     defaultContent.className="";
   },

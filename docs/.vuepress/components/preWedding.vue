@@ -25,21 +25,27 @@ export default {
     sliding: null,
     images: [],
   }),
-  mounted() {
-    const photos = require.context("../public/preWedding/", true, /\.jpg$/);
+  methods: {
+    loadData() {
+      const photos = require.context("../public/preWedding/", true, /\.jpg$/);
 
-    photos.keys().forEach((key) => {
-      let tempContent = key.replace(".jpg", "").replace(".\/", "");
-      this.images.push({
-        path: photos(key),
-        content: tempContent,
-        //content: tempContent.substr(tempContent.indexOf(".") + 1),
+      photos.keys().forEach((key) => {
+        let tempContent = key.replace(".jpg", "").replace(".\/", "");
+        this.images.push({
+          path: photos(key),
+          content: tempContent,
+          //content: tempContent.substr(tempContent.indexOf(".") + 1),
+        });
+        //console.log(key);
       });
-    });
-    //console.log(JSON.stringify(this.images));
-    
+    },
+  },
+  mounted() {
+    this.loadData();
+
+    // 移除theme-default-content, 畫面寬的限制
     let defaultContent = document.getElementsByClassName("theme-default-content")[0];
-    defaultContent.className="";
+    defaultContent.className = "";
   },
 };
 </script>
