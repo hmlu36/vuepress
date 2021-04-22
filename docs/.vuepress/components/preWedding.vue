@@ -3,12 +3,13 @@
     <b-carousel
       v-model="slide"
       fade
-      :interval="10000"
+      :interval="1000"
       controls
       background="#ababab"
-      img-width="1024"
-      img-height="480"
+      img-width="100%"
       style="text-shadow: 1px 1px 2px #333"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
     >
       <!-- Slides with custom text -->
       <template v-for="image in images">
@@ -39,13 +40,21 @@ export default {
         //console.log(key);
       });
     },
+    onSlideStart(slide) {
+      this.sliding = true;
+      
+      //let activeCarousel = document.querySelector('.carousel-item .active');
+      //let image = activeCarousel.querySelector('img');
+      //console.log(image.length);
+    },
+    onSlideEnd(slide) {
+      this.sliding = false;
+    },
   },
   mounted() {
     this.loadData();
 
     // 移除theme-default-content, 畫面寬的限制
-    let defaultContent = document.getElementsByClassName("theme-default-content")[0];
-    defaultContent.className = "";
   },
 };
 </script>
