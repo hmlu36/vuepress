@@ -3,12 +3,11 @@
     <b-carousel
       v-model="slide"
       fade
-      :interval="1000"
+      :interval="5000"
       controls
       background="#ababab"
-      img-width="100%"
       style="text-shadow: 1px 1px 2px #333"
-      @sliding-start="onSlideStart"
+      @sliding-next="onSlideStart"
       @sliding-end="onSlideEnd"
     >
       <!-- Slides with custom text -->
@@ -42,19 +41,35 @@ export default {
     },
     onSlideStart(slide) {
       this.sliding = true;
-      
-      //let activeCarousel = document.querySelector('.carousel-item .active');
-      //let image = activeCarousel.querySelector('img');
-      //console.log(image.length);
     },
     onSlideEnd(slide) {
       this.sliding = false;
+      this.resizeImage();
+    },
+    resizeImage() {
+      //console.log(this.slide);
+      //console.log(JSON.stringify(this.images));
+      let activeImage = this.images[this.slide];
+      //console.log(JSON.stringify(activeImage));
+      const img = new Image();
+      img.src = activeImage.path;
+      img.onload = ({ target }) => {
+        console.log(target.width + " " + target.height);
+        let defaultContent = document.getElementsByClassName("theme-default-content")[0];
+        if (target.width > target.height) {
+          defaultContent.style.maxWidth = "1080px";
+        } else {
+          defaultContent.style.maxWidth = "720px";
+        }
+        //console.log(defaultContent.style.maxWidth);
+      };
     },
   },
   mounted() {
     this.loadData();
 
-    // 移除theme-default-content, 畫面寬的限制
+    // 調整theme-default-content, 畫面寬的限制
+    this.resizeImage();
   },
 };
 </script>
