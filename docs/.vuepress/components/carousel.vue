@@ -57,7 +57,7 @@ export default {
       const img = new Image();
       img.src = activeImage.path;
       img.onload = ({ target }) => {
-        console.log(target.width + " " + target.height);
+        //console.log(target.width + " " + target.height);
         let defaultContent = document.getElementsByClassName("theme-default-content")[0];
         if (target.width > target.height) {
           defaultContent.style.maxWidth = "1080px";
