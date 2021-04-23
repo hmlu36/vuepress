@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-carousel
-      :interval="6800"
+      :interval="5000"
       img-width="88%"
-      img-height="68%"
+      img-height="45%"
       style="text-shadow: 0.1px 0.1px 0.1px #333"
       background="rgba(255,255,255, 0.2)"
     >
@@ -73,41 +73,41 @@ export default {
 
 @media (min-width: 320px) {
   .message {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .signature {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
 @media (min-width: 640px) {
   .message {
-    font-size: 26px;
+    font-size: 36px;
   }
 
   .signature {
-    font-size: 22px;
+    font-size: 28px;
   }
 }
 
 @media (min-width: 1280px) {
   .message {
-    font-size: 28px;
+    font-size: 40px;
   }
 
   .signature {
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 
 @media (min-width: 2560px) {
   .message {
-    font-size: 30px;
+    font-size: 48px;
   }
 
   .signature {
-    font-size: 26px;
+    font-size: 36px;
   }
 }
 </style>
