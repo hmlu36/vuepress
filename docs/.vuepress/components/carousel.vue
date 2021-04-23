@@ -36,6 +36,19 @@ export default {
       this.sliding = false;
       this.resizeImage();
     },
+    loadData() {
+      const photos = require.context("../public/photo/", true, /\.jpg$/);
+
+      photos.keys().forEach((key) => {
+        let tempContent = key.replace(".jpg", "").replace(".\/", "");
+        this.images.push({
+          path: photos(key),
+          //content: tempContent,
+          content: tempContent.substr(tempContent.indexOf(".") + 1),
+        });
+        //console.log(key);
+      });
+    },
     resizeImage() {
       //console.log(this.slide);
       //console.log(JSON.stringify(this.images));
