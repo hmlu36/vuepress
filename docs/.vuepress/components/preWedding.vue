@@ -27,7 +27,7 @@ export default {
   }),
   methods: {
     loadData() {
-      const photos = require.context("../public/preWedding/", true, /\.jpg$/);
+      const photos = require.context("../public/preWedding/", true, /\.jpg$|\.JPG$/);
 
       photos.keys().forEach((key) => {
         let tempContent = key.replace(".jpg", "").replace(".\/", "");

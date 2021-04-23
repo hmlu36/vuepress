@@ -37,7 +37,7 @@ export default {
       this.resizeImage();
     },
     loadData() {
-      const photos = require.context("../public/photo/", true, /\.jpg$/);
+      const photos = require.context("../public/photo/", true, /\.jpg$|\.JPG$/);
 
       photos.keys().forEach((key) => {
         let tempContent = key.replace(".jpg", "").replace(".\/", "");
